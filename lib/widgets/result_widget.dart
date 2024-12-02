@@ -24,14 +24,6 @@ class ResultWidget extends StatelessWidget {
           result,
           style: textStyle,
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.backspace_outlined),
-          iconSize: 22,
-          color: const Color.fromRGBO(133, 133, 133, 1),
-          alignment: Alignment.center,
-          padding: const EdgeInsets.all(20),
-        )
       ],
     );
   }

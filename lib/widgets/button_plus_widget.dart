@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ButtonPlusWidget extends StatelessWidget {
-  const ButtonPlusWidget({super.key});
+  const ButtonPlusWidget({super.key, required this.onPressed});
+
+  final void Function(String buttonText, BuildContext context) onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,9 @@ class ButtonPlusWidget extends StatelessWidget {
     );
 
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        onPressed("+", context);
+      },
       style: buttonStyle,
       child: const Text(
         "+",

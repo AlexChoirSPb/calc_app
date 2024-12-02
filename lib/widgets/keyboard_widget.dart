@@ -4,13 +4,15 @@ import 'package:calc_app/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 
 class KeyboardWidget extends StatelessWidget {
-  const KeyboardWidget({super.key});
+  const KeyboardWidget({super.key, required this.onPressed});
+
+  final void Function(String buttonText, BuildContext context) onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
@@ -18,56 +20,115 @@ class KeyboardWidget extends StatelessWidget {
               ButtonWidget(
                 text: "Ac",
                 isMain: true,
+                onPressed: onPressed,
               ),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "7"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "4"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "1"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "+/-"),
-              SpaceWidget(width: 0, height: 22),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "7",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "4",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "1",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              const ButtonWidget(
+                text: "",
+                onPressed: null,
+              ),
+              const SpaceWidget(width: 0, height: 22),
             ],
           ),
           Column(
             children: [
-              ButtonWidget(text: "%", isFeel: true),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "8"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "5"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "2"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "0"),
-              SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "%",
+                isFeel: true,
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "8",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "5",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "2",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "0",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
             ],
           ),
           Column(
             children: [
-              ButtonWidget(text: ":", isFeel: true),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "9"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "6"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "3"),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "."),
-              SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: ":",
+                isFeel: true,
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "9",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "6",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "3",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: ".",
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
             ],
           ),
           Column(
             children: [
-              ButtonWidget(text: "*", isFeel: true),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "-", isFeel: true),
-              SpaceWidget(width: 0, height: 22),
-              ButtonPlusWidget(),
-              SpaceWidget(width: 0, height: 22),
-              ButtonWidget(text: "=", isFeel: true),
-              SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "*",
+                isFeel: true,
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "-",
+                isFeel: true,
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonPlusWidget(
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
+              ButtonWidget(
+                text: "=",
+                isFeel: true,
+                onPressed: onPressed,
+              ),
+              const SpaceWidget(width: 0, height: 22),
             ],
           ),
         ],

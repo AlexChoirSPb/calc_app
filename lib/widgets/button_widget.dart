@@ -5,11 +5,14 @@ class ButtonWidget extends StatelessWidget {
       {super.key,
       required this.text,
       this.isFeel = false,
-      this.isMain = false});
+      this.isMain = false,
+      required this.onPressed});
 
   final String text;
   final bool isFeel;
   final bool isMain;
+
+  final void Function(String buttonText, BuildContext context)? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,11 @@ class ButtonWidget extends StatelessWidget {
     );
 
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        if (onPressed != null) {
+          onPressed!(text, context);
+        }
+      },
       style: buttonStyle,
       child: Text(
         text,
